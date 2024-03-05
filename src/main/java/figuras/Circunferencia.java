@@ -1,25 +1,28 @@
-package utilidades;
+package figuras;
 
-public class Circulo {
+public class Circunferencia {
 
     private double rad;
+    private String color;
+    public double PI;
 
-    public Circulo(double radio) {
+    public Circunferencia(double radio) {
         this.rad = radio;
+        PI = 3.14;
     }
 
     public void imprimir() {
-        String color = "rojo";
+        color = "rojo";
         System.out.println("Diametro: " + 2 * getRad());
         System.out.println("Color: " + color);
-        double area = 2 * 3.1416 * getRad() * getRad();
-        System.out.println(area);
+        System.out.println(2 * PI * getRad() * getRad());
     }
+    
 
-    public boolean esIgual(Circulo otro, boolean conDecimales) {
+    public boolean esIgual(boolean considerarDecimales, Circunferencia otro) {
         double radio1 = this.getRad();
         double radio2 = otro.getRad();
-        if (conDecimales) {
+        if (considerarDecimales) {
             if (radio1 == radio2) {
                 return true;
             } else {
@@ -44,7 +47,7 @@ public class Circulo {
     /**
      * @param rad the rad to set
      */
-    public void setRad(double rad) {
-        this.rad = rad;
+    public void setRad(double radio) {
+        this.rad = radio;
     }
 }
